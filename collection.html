@@ -8,20 +8,23 @@
     <style>
         .iframe-container {
             display: flex;
-            overflow-x: auto;
+            justify-content: center;
             padding: 20px 0;
-            gap: 20px;
-            justify-content: flex-start;
         }
 
         iframe {
-            width: 23%;
+            width: 90%;
+            max-width: 800px;
             height: 500px;
             border: 2px solid #ccc;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: none;
+        }
+
+        iframe.active {
+            display: block;
         }
 
         iframe:hover {
@@ -80,14 +83,6 @@
         }
 
         @media (max-width: 768px) {
-            iframe {
-                width: 90%;
-            }
-
-            .iframe-container {
-                gap: 10px;
-            }
-
             footer {
                 position: static;
             }
@@ -113,21 +108,21 @@
 
 <section id="collection">
     <h2>My Web & App Development Collection</h2>
-    <p>Here are some of the code projects I've worked on during my Web and App Development course. Click on the links to view my work!</p>
+    <p>Here are some of the code projects I've worked on during my Web and App Development course. Click on the buttons to view my work!</p>
 
     <div class="collection-cfu">
-        <button class="cfu" onclick="showIframe('cfu1')"><a href="">CFU1</a></button>
-        <button class="cfu" onclick="showIframe('cfu2')"><a href="">CFU2</a></button>
-        <button class="cfu" onclick="showIframe('cfu3')"><a href="">CFU3</a></button>
-        <button class="cfu" onclick="showIframe('cfu4')"><a href="">CFU4</a></button>
-        <button class="cfu" onclick="showIframe('cfu5')"><a href="">CFU5</a></button>
-        <button class="cfu" onclick="showIframe('cfu6')"><a href="">CFU6</a></button>
-        <button class="cfu" onclick="showIframe('cfu7')"><a href="">CFU7</a></button>
-        <button class="cfu" onclick="showIframe('cfu8')"><a href="">CFU8</a></button>
-        <button class="cfu" onclick="showIframe('cfu9')"><a href="">CFU9</a></button>
-        <button class="cfu" onclick="showIframe('cfu10')"><a href="">CFU10</a></button>
-        <button class="cfu" onclick="showIframe('cfu11')"><a href="">CFU11</a></button>
-        <button class="cfu" onclick="showIframe('cfu12')"><a href="">CFU12</a></button>
+        <button class="cfu" onclick="showIframe('cfu1')">CFU1</button>
+        <button class="cfu" onclick="showIframe('cfu2')">CFU2</button>
+        <button class="cfu" onclick="showIframe('cfu3')">CFU3</button>
+        <button class="cfu" onclick="showIframe('cfu4')">CFU4</button>
+        <button class="cfu" onclick="showIframe('cfu5')">CFU5</button>
+        <button class="cfu" onclick="showIframe('cfu6')">CFU6</button>
+        <button class="cfu" onclick="showIframe('cfu7')">CFU7</button>
+        <button class="cfu" onclick="showIframe('cfu8')">CFU8</button>
+        <button class="cfu" onclick="showIframe('cfu9')">CFU9</button>
+        <button class="cfu" onclick="showIframe('cfu10')">CFU10</button>
+        <button class="cfu" onclick="showIframe('cfu11')">CFU11</button>
+        <button class="cfu" onclick="showIframe('cfu12')">CFU12</button>
     </div>
 
     <div class="iframe-container">
@@ -157,16 +152,16 @@
     <p>© 2024 Sharena's Portfolio</p>
 </footer>
 <script>
-     function showIframe(iframeId) {
-            // Hide all iframes
-            const iframes = document.getElementsByTagName('iframe');
-            for (let iframe of iframes) {
-                iframe.classList.remove('active');
-            }
-            
-            // Show the selected iframe
-            document.getElementById(iframeId).classList.add('active');
+    function showIframe(iframeId) {
+        // Hide all iframes
+        const iframes = document.getElementsByTagName('iframe');
+        for (let iframe of iframes) {
+            iframe.classList.remove('active');
         }
+        
+        // Show the selected iframe
+        document.getElementById(iframeId).classList.add('active');
+    }
 </script>
 </body>
 </html>
